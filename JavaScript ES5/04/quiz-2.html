@@ -14,5 +14,19 @@
 </head>
 <body>
 	<h2>3의 배수 찾기</h2>
+
+	<script>
+		// 3의 배수갯수를 담을 변수선언
+		var count = 0;
+			// 3의 배수목록
+			for(var i=1; i<=100; i++) document.write( (i%3==0)? i+", ": "" );
+			document.write("<br /> <br />");
+
+			// 3의 배수갯수
+			for(var i=1; i<=100; i++) (i%3==0)? count++ : "";
+			document.write("3의 배수의 갯수: " + count);
+
+
+	</script>
 </body>
 </html>

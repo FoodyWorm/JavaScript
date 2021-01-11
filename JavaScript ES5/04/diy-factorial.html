@@ -9,16 +9,16 @@
 </head>
 <body>
 	<script>
-		var n = prompt("숫자를 입력하세요.", "10");
-		var nFact = 1;
-		var i = 2;
-
-		while(i <= n) {
-			nFact *= i;
+		var nFact = prompt("숫자를 입력하세요.", "10");
+		var sum = 1;
+		var i=1;
+		do{
+			sum *= i;
 			i++;
-		}
+		}while(i <= nFact);
 
-		documen.write(n + "!= " + nFact);
+
+		document.write(nFact + "! = " + sum);
 	</script>
 </body>
 </html>

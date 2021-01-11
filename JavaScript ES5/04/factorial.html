@@ -8,6 +8,16 @@
 	<link rel="stylesheet" href="css/factorial.css">
 </head>
 <body>
+	<script>
+		var nFact = prompt("숫자를 입력하세요.", "10");
+		var sum = 1;
+		for(var i=1; i<=nFact; i++){
+			sum *= i;
+		}
+		
+		document.write(nFact+ "! = " + sum);
+		
+	</script>
 
 </body>
 </html>

@@ -11,5 +11,21 @@
 	<h1>짝수끼리 더하기</h1>
 	<div id="result"></div>
 
+	<script>
+		var n = 10;
+		var sum = 0;
+
+		for(var i = 1; i <= n; i++){
+			if(i % 2 == 0) {
+				sum += i;
+			}
+			else{
+				continue;
+			}
+			document.write("더하는 값" + i + "------" +", 더하고 난 후 " + sum + "<br>");
+		}
+		
+		document.querySelector("#result").innerHTML = "짝수만 더한 합은 " + sum;
+	</script>
 </body>
 </html>
