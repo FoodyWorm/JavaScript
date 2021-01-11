@@ -10,5 +10,17 @@
 <body>	
 	<button class="btn" onclick="calc()">나이 계산하기</button>
 	<div id="result" class="show">(결과 값 표시)</div> 
+
+
+
+	<Script>
+		function calc() {
+			var currentYear = prompt("현재 연도를 입력해주세요.", "YYYY");
+			var startYear = prompt("태어난 연도를 입력해주세요.", "YYYY");
+			var age = currentYear - startYear + 1;
+
+			document.querySelector("#result").innerHTML = alert('현재 나이는 ' + age + "세 입니다.");
+		}
+	</Script>
 </body>
 </html>

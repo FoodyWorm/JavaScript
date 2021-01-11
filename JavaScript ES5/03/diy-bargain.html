@@ -24,6 +24,19 @@
 			</li>
 		</ul>
 		<div id="showResult"></div>	
-	</div>	
+	</div>
+
+	<script>
+		function showPrice() {
+			var originPrice = document.querySelector("#oPrice").value;
+			var bargainPrice =  document.querySelector("#rate").value;
+			var savedPrice = originPrice * (bargainPrice/100);
+			var totalPrice = originPrice - savedPrice;
+			document.querySelector("#showResult").innerHTML = "원래가격: " + originPrice + "원, 할인율: " + bargainPrice + "%, " + 
+			"총 할인금액: " + savedPrice + "원  합: " + totalPrice + "원에 구매하셨습니다." ;
+
+		}
+
+	</script>
 </body>
 </html>
