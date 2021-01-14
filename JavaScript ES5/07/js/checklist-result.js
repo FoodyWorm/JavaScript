@@ -21,7 +21,8 @@
 			list += "</ul>";   // 목록을 끝내는 </ul> 태그 저장
 			
 			document.querySelector('#itemList').innerHTML = list;  // list 내용 표시
-			
+	
+
 			var remove = document.querySelectorAll(".close");  // 삭제 버튼을 변수로 저장. 배열 형태가 됨
 			for(var i = 0; i < remove.length; i++) {  // remove 배열의 요소 모두를 확인
 				remove[i].addEventListener("click", removeList);  // 요소를 클릭하면 removeList() 실행
