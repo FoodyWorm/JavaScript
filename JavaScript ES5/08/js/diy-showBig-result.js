@@ -8,5 +8,6 @@
 		function chagePic() {
 				var newPic = this.src;   // click 이벤트가 발생한 대상의 src 속성 값 가져옴
 				bigPic.setAttribute("src", newPic);  // newPic 값을 큰 이미지의 src 속성에 할당.
-				// 윗 줄을 cup.src = newPic; 로 사용해도 됨.
-			}	
+				console.log(newPic)
+				// 윗 줄을 cup.src = newPiec; 로 사용해도 됨.
+		}	

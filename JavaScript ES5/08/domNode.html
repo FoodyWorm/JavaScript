@@ -15,6 +15,31 @@
 			font-weight:bold;
 		}
 	</style>
+
 </head>
-<body></body>
+
+<body>
+	<p class="accent">주문이 완료되었습니다.</p>
+
+
+
+<script>
+	var newP = document.createElement("p");
+	var newText = document.createTextNode("주문이 취소되었습니다.");
+
+	newP.setAttribute("class", "accent");
+	newP.appendChild(newText);
+	document.body.appendChild(newP);
+
+	console.log(newP);
+
+	//\/\/\/\/\/\/\/\/\/\/\/\/\/\//
+	var newId = document.createElement("button");
+	newId.setAttribute("id", "doit_js");
+	newId.appendChild(document.createTextNode("주문하기"));
+	document.body.appendChild(newId);
+	console.log(newId);
+
+</script>
+</body>
 </html>

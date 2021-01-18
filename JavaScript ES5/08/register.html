@@ -8,16 +8,23 @@
 	<link rel="stylesheet" href="css/nameList.css">
 </head>
 <body>
+	<!-- 제목 -->
 	<div id="container">
 		<h1>참가 신청</h1>
+
+		<!-- 이름입력 및 신청-->
 		<form action="">
 			<input type="text" id="userName" placeholder="이름" required>
-			<button>신청</button>
+			<button onclick="newRegister(); return false;">신청</button>
 		</form>
+
+		<!-- 이름 표시 리스트 -->
 		<hr>
 		<div id="nameList"></div>
 	</div>
 	
-	<script src="js/register-create.js"></script>
+
+	<!-- JavaScript 연동 -->
+	<script src="js/register.js"></script>
 </body>
 </html>

@@ -16,5 +16,28 @@
 				<p>도레미 <span class="del">X</span></p>
 			</div>
 	</div>
+
+	<script>
+		console.log(document.querySelectorAll(".del"));
+		console.log(document.querySelectorAll(".del")[0]);
+		console.log(document.querySelectorAll("p")[0]);
+		console.log(document.querySelectorAll("div"));
+		console.log(document.querySelectorAll("p")[1]);
+		console.log(document.querySelectorAll("p")[0].hasChildNodes());
+		console.log(document.querySelector("#nameList").childNodes);
+		console.log(document.querySelector("#nameList").children);
+		var nameList = document.querySelector("#nameList");
+		nameList.insertBefore(nameList.children[2], nameList.children[0]);
+		console.log(document.querySelector("#nameList").parentNode);
+		///\/\//\/\/\/\/\/\/\/\/\/\
+		var first = document.querySelectorAll(".del")[0];
+		var firstP = document.querySelectorAll("p")[0];
+		firstP.removeChild(first);
+
+		///\/\/\/\/\/\/\/\/\/\/\/\/\
+		function delText() {
+				document.querySelector("#nameList").removeChild(document.querySelectorAll("p")[0]);
+		}
+	</script>
 </body>
 </html>

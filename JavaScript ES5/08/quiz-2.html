@@ -21,8 +21,12 @@
 		.check:hover {
 			color:#222;
 		}
+
 	</style>
+
 </head>
+
+
 <body>
 	<h1>할 일 목록</h1>
 	<ul>
@@ -32,5 +36,22 @@
 		<li><span class="check">&check;</span>할 일 4 </li>
 		<li><span class="check">&check;</span>할 일 5 </li>
 	</ul>
+
+
+	<script>
+		var checkList = document.querySelectorAll(".check");
+		console.log(checkList);
+		console.log(checkList[0]);
+
+		for(var i=0; i<checkList.length; i++) {
+				checkList[i].addEventListener("click", function(){
+						this.parentNode.style.color = "#ccc";
+						
+
+				});
+
+		}
+
+	</script>
 </body>
 </html>

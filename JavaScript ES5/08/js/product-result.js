@@ -15,10 +15,12 @@
 				document.querySelector("#detail").style.display = "block";  // 상세 정보를 화면에 표시
 				view.innerHTML = "상세 설명 닫기";  // 링크 내용 수정
 				isOpen = true;  // 표시 상태로 지정
+				document.querySelector("#heading").style.color = "white";
 			}
 			else {  // 상세 정보가 표시되어 있다면 
 				document.querySelector("#detail").style.display = "none";  // 상세 정보를 화면에서 감춤
 				view.innerHTML = "상세 설명 보기";  // 링크 내용 수정
 				isOpen = false;  // 감춰진 상태로 지정
+				document.querySelector("#heading").style.color = "black";
 			}
 		});

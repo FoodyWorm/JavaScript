@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 	<title>연습문제 1</title>
 	<style>
 		p {
@@ -12,9 +13,24 @@
 			color:#222;
 		}
 	</style>
+
 </head>
+
+
 <body>
 	<h1>Ipsum quis consectetur sint ullamco.</h1>
 	<p id="myText">Labore do officia velit mollit eu pariatur. Do aute sunt aute dolore labore incididunt Lorem mollit laborum adipisicing. Ipsum adipisicing amet ut in. Lorem incididunt sunt et excepteur amet occaecat culpa incididunt exercitation. Labore excepteur Lorem voluptate ipsum magna consequat eiusmod ex anim labore pariatur eiusmod. Excepteur amet non magna est.</p>
+
+
+	<script>
+		var text = document.querySelector("#myText");
+		text.addEventListener("click", function() {
+						text.style.fontSize = "20px";
+						text.style.backgroundColor = "#ccc";
+						text.style.color = "red";
+		});
+		
+		
+	</script>
 </body>
 </html>
