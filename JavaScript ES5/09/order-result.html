@@ -4,11 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
 	<title>결제하기</title>
 	<link rel="stylesheet" href="css/order.css">
 </head>
+
+
 <body>
+	<!-- 메인노드 -->
 	<div id="container">
+
+		<!-- 주문정보폼 -->
 		<form name="order">
 			<fieldset>
 				<legend>주문 정보</legend>
@@ -28,6 +34,8 @@
 				</ul>
 			</fieldset>
 		</form>
+
+		<!-- 배송정보폼 -->
 		<form name="ship">
 			<fieldset>
 				<legend>배송 정보</legend>								
@@ -48,10 +56,13 @@
 						<label class="field" for="shippingAddr">주소 : </label>
 						<input type="text" class="input-box" id="shippingAddr" name="shippingAddr">
 					</li>
-				</ul>				
+				</ul>
 			</fieldset>
+
+			<!-- 결제버튼 -->
 			<button type="submit" class="order">결제하기</button>
-		</form>		
+		</form>
+
 	</div>
 
 	<script src="js/order-result.js"></script>

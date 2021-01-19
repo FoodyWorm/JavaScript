@@ -7,43 +7,72 @@
 	<link rel="stylesheet" href="css/register.css">
 	<title>회원 가입</title>
 </head>
+
 <body>
+	<!-- Main Div -->
 	<div id="container">
 		<h1>회원 가입</h1>
+
+		<!-- register Form -->
 		<form action="#" id="register">
+			
+			<!-- User Information -->
 			<ul id="user-info">
+				
+				<!-- ID -->
 				<li>
 					<label for="user-id" class="field">아이디</label>
 					<input type="text" id="user-id" placeholder="4~15자리의 영문과 숫자로 입력" required onchange="checkId()">
 				</li>
+
+				<!-- Email -->
 				<li>
 					<label for="email" class="field">이메일</label>
-					<input type="email" id="email" required>
+					<input type="email" id="email" placeholder="ex) jangenkim@naver.com" required>
 				</li>
+
+				<!-- PW -->
 				<li>
 					<label for="user-pw1" class="field">비밀번호</label>
 					<input type="password" id="user-pw1" placeholder="8자리 이상" required onchange="checkPw()">
 				</li>
+
+				<!-- PW_Check-->
 				<li>
 					<label for="user-pw2" class="field">비밀번호 확인</label>
-					<input type="password" id="user-pw2" required onchange="comparePw()">
+					<input type="password" id="user-pw2" placeholder="비밀번호 재확인" required onchange="comparePw()">
 				</li>
+
+				<!-- Email Check -->
 				<li>
 					<label class="field">메일링 수신</label>
 					<label class="r"><input type="radio" value="yes" name="mailing">예</label>
 					<label class="r"><input type="radio" value="no" name="mailing">아니오</label>
 				</li>
+
 			</ul>
+			
+			<!-- Sign Up -->
 			<ul id="buttons">
+				
+				<!-- Join -->
 				<li>
 					<button type="submit" class="btn btnBlack">가입하기</button>					
 				</li>
+
+				<!-- Cancel -->
 				<li>
 					<button type="reseet" class="btn btnGray">취소</button>
 				</li>
 			</ul>
+
+
 		</form>
 	</div>
 
+	<!-- JavaScript -->
+	<script src="js/diy-signup.js"></script>
+
+<!-- End -->
 </body>
 </html>

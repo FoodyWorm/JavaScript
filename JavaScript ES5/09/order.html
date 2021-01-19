@@ -9,6 +9,7 @@
 </head>
 <body>
 	<div id="container">
+
 		<form name="order">
 			<fieldset>
 				<legend> 주문 정보 </legend>
@@ -28,6 +29,8 @@
 				</ul>
 			</fieldset>
 		</form>
+
+
 		<form name="ship">
 			<fieldset>
 				<legend> 배송 정보 </legend>								
@@ -50,8 +53,17 @@
 					</li>
 				</ul>				
 			</fieldset>
+
 			<button type="submit" class="order">결제하기</button>
-		</form>		
+		</form>
+
 	</div>
+
+	<script src="js/order.js">
+		//	document.querySelector(".order").addEventListener("click", function(){
+			//		var address = document.order.billingAddr.value;
+			//		console.log(address);
+		//	});
+</script>
 </body>
 </html>

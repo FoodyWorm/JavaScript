@@ -12,3 +12,6 @@
 				document.querySelector("#shippingAddr").value = "";
 			}
 		});
+
+		console.log(document.ship.shippingName.value); // 가볍지만 보기나쁘게
+		console.log(document.forms["ship"].elements["shippingName"].value); //귀찮지만 보기좋게

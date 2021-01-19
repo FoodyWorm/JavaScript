@@ -7,9 +7,12 @@
 	<link rel="stylesheet" href="css/register.css">
 	<title>회원 가입</title>
 </head>
+
+
 <body>
 	<div id="container">
 		<h1>회원 가입</h1>
+
 		<form action="#" id="register">
 			<ul id="user-info">
 				<li>
@@ -18,7 +21,7 @@
 				</li>
 				<li>
 					<label for="email" class="field">이메일</label>
-					<input type="email" id="email" required>
+					<input type="email" id="email" placeholder="ex) jangenkim@naver.com" required>
 				</li>
 				<li>
 					<label for="user-pw1" class="field">비밀번호</label>
@@ -26,7 +29,7 @@
 				</li>
 				<li>
 					<label for="user-pw2" class="field">비밀번호 확인</label>
-					<input type="password" id="user-pw2" required>
+					<input type="password" id="user-pw2" placeholder="비밀번호 재확인"required>
 				</li>
 				<li>
 					<label class="field">메일링 수신</label>
@@ -42,7 +45,12 @@
 					<button type="reseet" class="btn btnGray">취소</button>
 				</li>
 			</ul>
+
 		</form>
 	</div>
+
+
+
+	<script src="js/register.js"></script>
 </body>
 </html>

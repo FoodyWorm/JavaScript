@@ -2,4 +2,10 @@
 		function displaySelect() {
 			var selectedText = selectMenu.options[selectMenu.selectedIndex].innerText;		
 			alert("[" + selectedText + "]를 선택했습니다.");
-		}		
+			
+			// 1분 복습: var selectedText2 = selectMenu.options[2].textContent;
+			
+		}	
+
+		console.log(document.testForm.subject);
+		console.log(document.testForm.mailing1);
