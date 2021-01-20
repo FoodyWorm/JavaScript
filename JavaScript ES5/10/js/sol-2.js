@@ -4,6 +4,7 @@
       var z = Math.floor(Math.random() * 256);
       var bgColor = "rgb(" + x + "," + y + "," + z + ")";
         document.body.style.background = bgColor;
+      console.log("연결");
     }
 
     changeBg();
