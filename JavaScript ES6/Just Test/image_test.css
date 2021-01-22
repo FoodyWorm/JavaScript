@@ -1,0 +1,18 @@
+button{
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background-color: white;
+}
+
+img{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+.Test{
+  width: 30px;
+  height: 30px;
+  background-image: url(Delete_Button.ico.jpg);
+}
