@@ -17,8 +17,6 @@ document.querySelector("#Add_Button").addEventListener("click", function(){
 
     // DelButton노드 생성
     var delButton = document.createElement("button");
-    var delButtonText = document.createTextNode("");
-    delButton.appendChild(delButtonText);
     delButton.setAttribute("class", "delButton");
 
     // 밑줄노드 생성
@@ -53,16 +51,14 @@ document.querySelector("#Add_Button").addEventListener("click", function(){
 
 
 // List 삭제 이벤트 //
-function delList() { $(this.parentNode).remove(); } 
+function delList() { this.parentNode.remove(); } 
 
 
 // List 체크완료 이벤트 //
 function checkList() {
-    if(this.checked == true)
-        $(this.parentNode.childNodes[1]).css({ "text-decoration-line" : "line-through" });
-    else 
-        $(this.parentNode.childNodes[1]).css({ "text-decoration-line" : "none" });
-  
+    if(this.checked == true) { this.parentNode.childNodes[1].style.textDecorationLine = "line-through"; }
+    else { this.parentNode.childNodes[1].style.textDecorationLine = "none"; }
+    
 }
 
 
