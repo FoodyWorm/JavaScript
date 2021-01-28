@@ -1,0 +1,16 @@
+{
+  "name": "mosca_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "mosca": "^2.8.3",
+    "mqtt": "^4.2.6"
+  }
+}
