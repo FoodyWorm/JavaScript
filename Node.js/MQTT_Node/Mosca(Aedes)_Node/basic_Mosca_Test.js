@@ -48,7 +48,7 @@ server.published = function(packet, client, cb) {
 
 //////////////////////////////////////////
 // mosca를 사용하기위해 json 파일에 요구함.
-var mosca = require('mosca');
+const mosca = require('mosca');
 
 /*/ settings에 사용할 backend를 객체로 준비함.
 const settings = {
@@ -58,11 +58,12 @@ const settings = {
   pubsubCollection: 'ascoltatori',
   mongo: {}
 };*/
+
 // 서버의 세팅 값을 준비함.
 const settings = {
-  port: 1883,
-  backend: pubsubsettings,
-  persistence: mosca.persistence.Memery
+  port: 1883//,
+  //backend: pubsubsettings,
+  //persistence: mosca.persistence.Memery
 };
 
 // 세팅값을 기준으로 모스카 서버 객체를 server에 저장.

@@ -9,8 +9,8 @@ var mqtt = require('mqtt');
 // 이 클라이언트가 connect할 경우 함수를 실행.
 client.on('connect', function () {
 
-  //클라이언트는 presence토픽을 구독(subscribe)함.
-  client.subscribe('presence', function(err) {
+//클라이언트는 presence토픽을 구독(subscribe)함.
+      client.subscribe('presence', function(err) {
 
     //단, 에러가 나지 않았을 경우에 실행함.
     if(!err)
@@ -30,5 +30,5 @@ client.on('message', function (topic, message) {
   console.log(message.toString());
   //클라이언트의 접속을 종료함.
   client.end();
-
+  
 })
