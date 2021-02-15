@@ -1,4 +1,3 @@
-var mqtt = require('mqtt');
 var mosca = require('mosca');
 
  
