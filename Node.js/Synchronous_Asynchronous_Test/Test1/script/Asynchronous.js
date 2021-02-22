@@ -1,17 +1,22 @@
 var result = document.querySelector("#Asynchronous_result");
 
+// Dict
 var datas = [];
+
+// (1)
 datas.push(1);
 
+// (2)
 setTimeout(() => {
   (async function (x) {
     datas.push(x);
   })(2);
 }, 100);
+
+// (3)
 datas.push(3);
 
-
-
+// result
 setTimeout(() => {
    // 결과값 전송
    result.appendChild(document.createTextNode(datas));
