@@ -51,7 +51,7 @@ app.get('/getjson/:id', function(req, res) {
   });
 });
 
-// 경로 /postjson/id 으로 요청이 오면, fs.readFile로 Json파일을 가져와 데이터를 추가.
+// 경로 /postjson 으로 요청이 오면, fs.readFile로 Json파일을 가져와 데이터를 추가.
 app.post('/postjson', function(req, res) {
   fs.readFile('./src/test.json', 'utf-8', function(err, data) { 
     console.log("가져온 Json파일: " + data);

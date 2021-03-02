@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>join</title>
+</head>
+<body>
+
+    <section id="topMenu" >
+        <div>  MEMBER JOIN </div>
+    </section>
+    
+    <section id="login_section">
+        <fieldset>
+            <form class="mb_form" name="flogin" method="POST" action="signup">
+            
+            <label for="mb_name"> 
+                <input type="text" name="mb_name" id="mb_name" class="mb_name" placeholder="이름을 입력해주세요">
+            </label>
+            <br />  
+
+
+            <label for="mb_id"> 
+                <input type="text" name="mb_id" id="mb_id" class="mb_id" placeholder="아이디를 입력해주세요">
+            </label> 
+            <br />   
+            
+            <label for="mb_pw"> 
+              <input type="text" name="mb_pw" id="mb_pw" class="mb_pw" placeholder="비밀번호를 입력해주세요">
+            </label>
+            <br />  
+
+            <label for="mb_pw_re"> 
+                <input type="text" name="mb_pw_re" id="mb_pw_re" class="mb_pw_re" placeholder=" 한번 더 비밀번호를 입력해주세요">
+            </label>
+            <br />  
+
+            <label for="mb_type"> 
+                <!-- <input type="text" name="mb_type" id="mb_type" class="mb_type"> -->
+                <span>소속부서</span>
+                   <select id="mb_department" name="mb_department">
+                       <option> 대표</option>
+                       <option> R&D</option>
+                       <option> 스마트팜</option>
+                       <option> 물류팀</option>
+                       <option> 영업마케팅</option> 
+                       <option> 경영지원팀</option>
+
+                   </select> 
+              </label>
+              <br />  
+
+          <button id="login_btn" type="submit"> 회원가입</button>
+
+
+            </form> 
+        </fieldset>
+    </section>
+
+
+    <script src="../javascripts/verify_signup.js"></script>
+</body>
+</html>

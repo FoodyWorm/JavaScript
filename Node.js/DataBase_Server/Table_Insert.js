@@ -20,7 +20,7 @@ connection.connect();
 // 쿼리 명령문 (Select)
 var select = "SELECT * FROM test_table";
 
-/*/ test_table 테이블을 대상으로 데이터 조회, 쿼리 명령문 실행.
+/*/ test_table 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
 connection.query(insert_table, (err, result) => {
   if(err) { throw err; }
   console.log("Insert Data");
