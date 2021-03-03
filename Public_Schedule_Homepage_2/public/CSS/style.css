@@ -1,0 +1,61 @@
+a, a:hover{text-decoration: none; color: black;}
+th{font-size: 0.8rem; font-weight: 800;}
+td{font-size:0.7rem;}
+
+
+/***********************AMDIN *************************/
+#admin_btns{
+    width: 460px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#admin_btns > button{ width: 50%; height: 31px; margin-top: 5%; font-size: 16px; font-weight: 700;  }
+
+/***********user List ****************/
+#userList{
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#userList > table {
+    width: 100%;
+}
+
+/***********user schedule ****************/
+
+
+
+/***************************************** 로그인, 회원가입 공용 ***************/
+#topMenu{text-align: center; margin-top: 50px;}
+#topMenu > div {font-weight: 700; font-size: 24px;}
+#login_section{ width: 100%; text-align:center; margin-top: 3%;}
+fieldset{border: none;}
+
+.mb_form{ width: 460px; margin: 0 auto; border: none im !important;}
+
+label{ width: 100%; display: block;}                                                                                          
+
+#mb_name,#mb_id, #mb_pw,#mb_pw_re {width: 50%; margin-top: 15px;}
+
+#login_btn,#join_btn{ width: 52%; margin-top: 15px; }
+
+
+
+/*******************   join *****/
+label[for=mb_type] > span { font-size: 16px;}
+#mb_Team{ width: 37%; margin-top: 15px;}
+
+
+/************** main *************/
+#today { text-align: center; }
+#calender {
+   border: 1px solid rgb(0, 0, 0);
+}
+
+tr, td {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+

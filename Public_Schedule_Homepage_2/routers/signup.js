@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
   });
 
   // 회원가입을 완료한 사용자에게 보여줄 페이지.
-  res.sendFile(path.join(__dirname, '../html/login.html'));
+  res.sendFile(path.join(__dirname, '../public/html/login.html'));
 });
 
 module.exports = router;
