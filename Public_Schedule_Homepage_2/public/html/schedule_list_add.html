@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/style.css" rel="stylesheet" />
+
+    <title>Schedule List Add</title>
+  </head>
+
+  <body>
+     <!-- 스케줄 추가 위치 -->
+      <section id="schedule_list_add_position">
+
+        <!-- 스케줄 추가 테이블 -->
+        <table id="schedule_list_add" width="350px" height="500px">
+          <!-- 테이블 가로 위치 조정 -->
+          <colgroup>
+            <col width="20%"/>
+            <col width="30%"/>
+            <col width="20%"/>
+            <col width="30%"/>
+            
+          </colgroup>
+
+         
+          <form method="POST" action="schedule/add">
+            <!-- 테이블 제목, 제목내용-->
+            <tr>
+              <td><span id="add_title">제목</span></td>
+              <td colspan="3">
+                <input type="text" id="add_title_content" name="add_title_content" />
+              </td>
+            
+            </tr>
+          
+
+            <!-- 테이블 담당자, 담당자내용, 담당부서, 담당부서내용-->
+            <tr>
+              <td><span id="add_person">담장자</span></td>
+                <td>
+                  <input type="text" id="add_person_content" name="add_person_content" />
+                </td>
+
+              <td><span id="add_department">담당부서</span></td>
+                <td>
+                  <select id="add_department_content" name="add_department_content">
+                    <option> 대표</option>
+                    <option> R&D</option>
+                    <option> 스마트팜</option>
+                    <option> 물류팀</option>
+                    <option> 영업마케팅</option> 
+                    <option> 경영지원팀</option>
+
+                </select> 
+                </td>
+            </tr>
+
+            <!-- 날짜 -->
+            <tr>
+              <td><span id="add_days">날짜</span></td>
+              <td colspan="3">
+                <input type="text" id="add_days_content" name="add_days_content" />
+              </td>
+      
+            </tr>
+
+            <!-- 내용 -->
+            <tr>
+              <td colspan="8" rowspan="8">
+                <textarea id="list_add_content" name="list_add_content"></textarea>
+              </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+          
+
+            <!-- 추가하기 버튼 -->
+            <tr>
+              <td colspan="4" id="list_add">
+                <button id="list_add_btn">추가하기</button>
+              </td>
+              
+            </tr>
+          </form>
+
+        </table>
+
+      </section>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,61 +1,231 @@
-a, a:hover{text-decoration: none; color: black;}
-th{font-size: 0.8rem; font-weight: 800;}
-td{font-size:0.7rem;}
-
-
-/***********************AMDIN *************************/
-#admin_btns{
-    width: 460px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-#admin_btns > button{ width: 50%; height: 31px; margin-top: 5%; font-size: 16px; font-weight: 700;  }
-
-/***********user List ****************/
-#userList{
-    width: 100%;
-    margin-top: 15px;
-    text-align: center;
-}
-
-#userList > table {
-    width: 100%;
-}
-
-/***********user schedule ****************/
-
-
-
-/***************************************** 로그인, 회원가입 공용 ***************/
-#topMenu{text-align: center; margin-top: 50px;}
-#topMenu > div {font-weight: 700; font-size: 24px;}
-#login_section{ width: 100%; text-align:center; margin-top: 3%;}
-fieldset{border: none;}
-
-.mb_form{ width: 460px; margin: 0 auto; border: none im !important;}
-
-label{ width: 100%; display: block;}                                                                                          
-
-#mb_name,#mb_id, #mb_pw,#mb_pw_re {width: 50%; margin-top: 15px;}
-
-#login_btn,#join_btn{ width: 52%; margin-top: 15px; }
-
-
-
-/*******************   join *****/
-label[for=mb_type] > span { font-size: 16px;}
-#mb_Team{ width: 37%; margin-top: 15px;}
-
 
 /************** main *************/
 #today { text-align: center; }
 #calender {
-   border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    width: 50%;
+    height: 500px;
+}
+
+#calender_position {
+    display: flex;
+    justify-content: center;
 }
 
 tr, td {
     border: 1px solid rgb(0, 0, 0);
+    margin: 0px;
+    padding: 0px;
 }
 
+#days > td > h3{
+    text-align: center;
+    margin: 0px;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+#first_week > td > h5{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 80%;
+}
+#second_week > td > h5{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 80%;
+}
+#third_week > td > h5{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 80%;
+}
+#four_week > td > h5{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 80%;
+}
+#five_week > td > h5{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 80%;
+    color: darkgray;
+}
+
+#next_page > td {
+    text-align: center;
+}
+
+#next_page > td > span{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size:25px;
+    font-weight: bold;
+    
+}
+
+.Sunday {
+    color: firebrick;
+}
+.Saturday {
+    color: mediumblue;
+}
+
+#main_btn_position_1 {
+    position:relative;
+    left:40.2%;
+    padding-top: 10px;
+   
+}
+
+#main_btn_position_2 {
+    position:relative;
+    left:39%;
+    padding-top: 10px;
+   
+}
+
+.main_btn {
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.main_btn > button {
+   font-size: 20px;
+   font-weight: bold;
+   background-color: white;
+   border: 3px solid;
+   padding-right: 30px;
+   padding-left: 30px;
+
+}
+
+/************** schedule list add *************/
+#schedule_list_add_position {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#add_title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#add_person {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#add_department {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#add_days {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#list_add_btn {
+    width: 100%;
+    height: 100%;
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: 0px solid;
+}
+
+#add_title_content {
+    margin: 0px;
+    padding: 0px;
+    width: 98%;
+    height: 90%;
+    border: 0px solid;
+    text-align: center;
+    
+}
+
+#add_person_content {
+    margin: 0px;
+    padding: 0px;
+    width: 98%;
+    height: 90%;
+    border: 0px solid;
+    text-align: center;
+}
+
+#add_department_content {
+    margin: 0px;
+    padding: 0px;
+    width: 98%;
+    height: 90%;
+    border: 0px solid;
+    background-color: white;
+    text-align: center;
+}
+
+#list_add_content {
+    margin: 0px;
+    padding: 0px;
+    width: 99%;
+    height: 98%;
+    border: 0px solid;
+}
+
+#add_days_content {
+    margin: 0px;
+    padding: 0px;
+    width: 99%;
+    height: 98%;
+    border: 0px solid;
+    text-align: center;
+}
+
+/************** schedule list  *************/
+#schedule_list_title {
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#schedule_list_content {
+    height: 100%;
+    border: 1px solid;
+    font-weight: bold;
+}
+
+/***************** 로그인, 회원가입 공용 ***************/
+#topMenu {text-align: center; margin-top: 50px;}
+#topMenu > div {font-weight: 700; font-size: 24px;}
+#login_section { width: 100%; text-align:center; margin-top: 3%;}
+fieldset {border: none;}
+
+.mb_form { width: 460px; margin: 0 auto; border: none im !important;}
+
+label { width: 100%; display: block;}                                                                                          
+
+#mb_name,#mb_id, #mb_pw,#mb_pw_re {width: 50%; margin-top: 15px;}
+
+#login_btn,#join_btn { width: 52%; margin-top: 15px; ;}
+.link {
+    padding-top: 2.2%;
+    padding-bottom: 1%;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+
+
+/***********  join **********/
+label[for=mb_type] > span { font-size: 16px;}
+#mb_Team { width: 37%; margin-top: 15px;}
 

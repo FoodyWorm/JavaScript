@@ -1,9 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////////
-// mysql문을 사용하기 위한 모듈을 저장.
+// mysql문을 사용하기 위한 모듈을 저장. //
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var path = require('path');
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 // mysql 접속 옵션 설정.
@@ -15,29 +17,32 @@ var connection = mysql.createConnection({
   database: 'user_database'
 });
 
-// 회원 INDEX & grade
+// 임시 Index, start_Day, end_Day
 var index = 0;
-var grade = "basic"
+var start_Day = "start_test";
+var end_Day = "end_test";
+
 
 ////////////////////////////////////////////////////////////////////////////////////
-// 홈페이지에 signup 요청이 오면, 요청자의 정보를 JavaScript로 전송.
+// 홈페이지에 /schedule/add 요청이 오면, 스케줄 정보를 데이터베이스에 저장.
 router.post('/', (req, res) => {
   // FoodyWorm 세션 접속 시도.
   connection.connect();
-  
+
   // 쿼리 명령문 (Insert)
   //var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + req.body.id + "', '" + req.body.pw + "')";
-  var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + index + "', '" + req.body.mb_name + "', '" + req.body.mb_id + "', '" +req.body.mb_pw + "', '" + req.body.mb_department + "', '" + grade + "')";
+  var insert_data = "Insert Into schedules (schedule_Index, schedule_Name, schedule_Days, start_Day, end_Day, userName, department, content) VALUES ('" + index + "', '" + req.body.add_title_content + "', '" + req.body.add_days_content + "', '" + start_Day + "', '" + end_Day + "', '" + req.body.add_person_content + "', '"  + req.body.add_department_content + "', '"  + req.body.list_add_content + "')";
 
-  //users 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
+  //schedules 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
   connection.query(insert_data, (err, result) => {
     if(err) { throw err; }
     console.log("Insert Data");
     console.log(result); 
+    // 스케줄 데이터를 다 넣고나서, 보여줄 페이지. (메인 페이지)
+    res.end();
   });
 
-  // 회원가입을 완료한 사용자에게 보여줄 페이지. (로그인 페이지)
-  res.sendFile(path.join(__dirname, '../public/html/login.html'));
+  
 });
 
 module.exports = router;

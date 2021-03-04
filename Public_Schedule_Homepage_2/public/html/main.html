@@ -11,61 +11,105 @@
   
   <body>
     <H1 id="today">2021.03.04.</H1>
+
+    <div id="calender_position">
     <table id="calender">
-      <tr id="firstweek">
-        <td>일</td>
-        <td>월</td>
-        <td>화</td>
-        <td>수</td>
-        <td>목</td>
-        <td>금</td>
-        <td>토</td>
+      <tr id="days">
+        <td><h3 class="Sunday">일</h3></td>
+        <td><h3>월</h3></td>
+        <td><h3>화</h3></td>
+        <td><h3>수</h3></td>
+        <td><h3>목</h3></td>
+        <td><h3>금</h3></td>
+        <td><h3 class="Saturday">토</h3></td>
       </tr>
 
-      <tr id="secondweek">
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
+      <tr id="first_week">
+        <td><h5 class="Sunday">1</h5></td>
+        <td><h5>2</h5></td>
+        <td><h5>3</h5></td>
+        <td><h5>4</h5></td>
+        <td><h5>5</h5></td>
+        <td><h5>6</h5></td>
+        <td><h5 class="Saturday">7</h5></td>
       </tr>
 
-      <tr id="secondweek">
-        <td>8</td>
-        <td>9</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
+      <tr id="second_week">
+        <td><h5 class="Sunday">8</h5></td>
+        <td><h5>9</h5></td>
+        <td><h5>10</h5></td>
+        <td><h5>11</h5></td>
+        <td><h5>12</h5></td>
+        <td><h5>13</h5></td>
+        <td><h5 class="Saturday">14</h5></td>
       </tr>
 
-      <tr id="secondweek">
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
+      <tr id="third_week">
+        <td><h5 class="Sunday">15</h5></td>
+        <td><h5>16</h5></td>
+        <td><h5>17</h5></td>
+        <td><h5>18</h5></td>
+        <td><h5>19</h5></td>
+        <td><h5>20</h5></td>
+        <td><h5 class="Saturday">21</h5></td>
       </tr>
 
-      <tr id="secondweek">
-        <td>22</td>
-        <td>23</td>
-        <td>24</td>
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
+      <tr id="four_week">
+        <td><h5 class="Sunday">22</h5></td>
+        <td><h5>23</h5></td>
+        <td><h5>24</h5></td>
+        <td><h5>25</h5></td>
+        <td><h5>26</h5></td>
+        <td><h5>27</h5></td>
+        <td><h5 class="Saturday">28</h5></td>
+      </tr>
+
+      <tr id="five_week">
+        <td><h5>1</h5></td>
+        <td><h5>2</h5></td>
+        <td><h5>3</h5></td>
+        <td><h5>4</h5></td>
+        <td><h5>5</h5></td>
+        <td><h5>6</h5></td>
+        <td><h5 class="Saturday">7</h5></td>
+      </tr>
+
+      <tr id="next_page">
+        <td colspan="7">
+          <span>이전</span> <span>다음</span>
+        </td>
       </tr>
 
     </table>
+    </div>
+
+    
+    <section id="main_btn_position_1">
+      <form method="POST" action="todolist_move" class="main_btn">
+        <button id="todo_lsit_move" name="todo_list_move">해야할 일</button> 
+
+      </form>
+
+      <form method="POST" action="complete_list_move" class="main_btn">
+        <button id="complete_list_move" name="complete_list_move">완료된 일</button>
+   
+      </form>
+    </section>
+
+
+    <section id="main_btn_position_2">
+      <form method="POST" action="schedule_list_move" class="main_btn">
+        <button id="schedule_list_move" name="schedule_list_move">스케줄 목록</button>
+   
+      </form>
+
+      <form method="POST" action="schedule_add_move" class="main_btn">
+        <button id="schedule_add_move" name="schedule_add_move">스케줄 추가</button>
+
+      </form>
+    </section>
 
 
 
-    <script></script>
   </body>
 </html>
