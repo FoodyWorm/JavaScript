@@ -11,16 +11,19 @@
 
   <body>
     <!-- 페이지 제목 -->
-    <section id="schedule_list_title">
-      스케줄 목록
-    </section>
+    <form method="GET" action="/get_list" target="schedule_list_content">
+      <section id="schedule_list_title">
+        <button><span>스케줄 목록</span></button>
+      </section>
+    </form>
 
-    <section id="schedule_list_content">
-      ㅁ 공용 스케줄 관리홈페이지 제작 X
-    </section>
+    <!-- 페이지 내용 -->
+    <iframe id="schedule_list_content" name="schedule_list_content">
+      
+    </iframe>
 
+ 
 
-
-
+    <script src="../../routers/schedule_list.js"></script>
   </body>
 </html>

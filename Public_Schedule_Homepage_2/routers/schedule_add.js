@@ -33,13 +33,14 @@ router.post('/', (req, res) => {
   //var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + req.body.id + "', '" + req.body.pw + "')";
   var insert_data = "Insert Into schedules (schedule_Index, schedule_Name, schedule_Days, start_Day, end_Day, userName, department, content) VALUES ('" + index + "', '" + req.body.add_title_content + "', '" + req.body.add_days_content + "', '" + start_Day + "', '" + end_Day + "', '" + req.body.add_person_content + "', '"  + req.body.add_department_content + "', '"  + req.body.list_add_content + "')";
 
-  //schedules 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
+  // schedules 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
   connection.query(insert_data, (err, result) => {
     if(err) { throw err; }
     console.log("Insert Data");
-    console.log(result); 
+    console.log(result);
+    
     // 스케줄 데이터를 다 넣고나서, 보여줄 페이지. (메인 페이지)
-    res.end();
+    res.sendFile(path.join(__dirname,'../public/html/schedule_list_add.html'));
   });
 
   

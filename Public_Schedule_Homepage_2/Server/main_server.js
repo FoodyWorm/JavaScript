@@ -4,6 +4,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var app = express();
+require('jsdom-global')();
 
 // http 형식으로 express서버를 작성. //
 var Server = http.createServer(app);
@@ -27,7 +28,8 @@ var loginRouter = require('../routers/login');
 // 스케줄 목록 추가 시도 라우터 생성.
 var schedule_add = require('../routers/schedule_add');
 
-
+// 스케줄 목록 라우터 생성.
+var schedule_list = require('../routers/schedule_list');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,3 +73,5 @@ app.use('/login', loginRouter);
 // 스케줄 목록 추가 시도.
 app.use('/schedule/add',schedule_add);
 
+// 스케줄 목록
+app.use('/get_list', schedule_list);
