@@ -11,15 +11,24 @@
 
   <body>
     <!-- 페이지 제목 -->
-    <form method="GET" action="/get_list" target="schedule_list_content">
+    <form method="GET" action="/" target="no_move">
       <section id="schedule_list_title">
-        <button><span>스케줄 목록</span></button>
+        <button id="schedule_list_btn"><span>스케줄 목록</span></button>
       </section>
     </form>
 
     <!-- 페이지 내용 -->
-    <iframe id="schedule_list_content" name="schedule_list_content">
-    </iframe>
+    <section id="schedule_list_content">
+
+    </section>
+
+
+
+
+
+
+    <!-- 위치 고정용 iframe -->
+    <iframe id="no_move" name="no_move" scrolling="no" style="visibility:hidden; display: none;"></iframe>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../JavaScript/schedule_list.js"></script>

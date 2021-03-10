@@ -216,9 +216,9 @@ button > span {
     padding-bottom: 1.3%;
 }
 
-#schedule_list_content {
-    width: 100%;
-    height: 1080px;
+#no_move {
+    width: 0%;
+    height: 0px;
     border: 0px solid;
     font-weight: bold;
 }

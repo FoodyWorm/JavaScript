@@ -1,13 +1,22 @@
 ////////////////////////////////////////////////////////////////////////////////////
 // mysql문을 사용하기 위한 모듈을 저장. //
 var express = require('express');
+const { readFile } = require('fs');
 var router = express.Router();
 var mysql = require('mysql');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const path = require('path');
+const fs = require('fs');
+const jsonfile = require('jsonfile');
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//const jsdom = require("jsdom");
+//const { JSDOM } = jsdom;
 
 ////////////////////////////////////////////////////////////////////////////////////
 // mysql 접속 옵션 설정. //
+// 데이터베이스 접속 옵션 생성
 var connection = mysql.createConnection({
   host: '192.168.0.12',
   port: 3306,
@@ -22,8 +31,43 @@ connection.connect();
 // 쿼리 명령문 (Select) - 속성 id, pw만 검색. //
 var get_data = "SELECT DISTINCT schedule_Name FROM schedules";
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////
-// document를 사용하기 위한 객체 생성 //
+// 홈페이지에 get_list 요청이 오면, list 노드를 생성해서 응답.
+router.get('/', (req, res) => {
+  
+  // schedules 테이블을 대상으로 데이터 조회, 쿼리 명령문 실행. 
+  connection.query(get_data, (err, result) => {
+    if(err) { throw err; }
+
+    // 데이터베이스에서 가져온 값을 JSON.stringify로 배열 형식으로 나열하고, JSON.parse로 JSON파일로 전환.
+    var json_datas = JSON.parse(JSON.stringify(result));
+
+    // Save Json 로그
+    console.log("Save Json... \n");
+
+    // JSON 파일 저장하기
+    jsonfile.writeFile(path.join(__dirname, '../public/json/list.json'), json_datas, function(err) {
+      if (err) { console.log(err) }
+      console.log("JSON데이터를 파일에 성공적으로 저장하였습니다.")
+    });
+    
+    // JSON 파일 불러오기
+    fs.readFile(path.join(__dirname, '../public/json/list.json'), (err, data) => { console.log("Get Json: " + data); });
+
+    // 완성된 list_content를 전송
+    res.send("");
+  });
+});
+
+module.exports = router;
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+/*/ document를 사용하기 위한 객체 생성 //
 // JSDOM 객체에 옵션을 주고 생성.
 const dom = new JSDOM(
 '<!DOCTYPE html>' +
@@ -50,7 +94,18 @@ const dom = new JSDOM(
   resources: "usable"
 });
 
+// document를 좀 더 수월하게 사용할 수 있도록 Dom객체를 생성.
 const Dom = dom.window.document;
+
+// 새로운 jsdom
+const resourcesLoader = new jsdom.ResourceLoader({
+  proxy: "http://127.0.0.1:3030"
+});
+
+const dom2 = new JSDOM('', { resources: resourcesLoader });
+const Dom2 = dom2.window.document;
+console.log(Dom2.body.childNodes.length);
+
 ////////////////////////////////////////////////////////////////////////////////////
 // 홈페이지에 get_list 요청이 오면, list 노드를 생성해서 응답.
 router.get('/', (req, res) => {
@@ -65,9 +120,9 @@ router.get('/', (req, res) => {
     console.log("make list... \n");
     // 리스트 생성
     var list_content = Dom.createElement('div');
-    list_content.setAttribute("class", "list_content");
+    list_content.setAttribute("id", "list_content");
 
-   // 리스트에 스케줄을 추가하는 구간 //
+    // 리스트에 스케줄을 추가하는 구간 //
     for(schedule_Name in json_datas) {
       // 스케줄 내용을 감싸게 될 P노드 생성
       var p_Tag = Dom.createElement('p');
@@ -91,6 +146,24 @@ router.get('/', (req, res) => {
       // 밑줄노드 생성
       var underLine = Dom.createElement("hr");
 
+      // List 삭제 이벤트 연결
+      delButton.addEventListener("click", () => {
+        console.log("Del_Event - Connection!");
+        this.parentNode.remove();
+      });
+
+      // List 체크완료 이벤트 연결
+      checkBox.addEventListener("click", () => {
+        if(this.checked == true) {
+          console.log("Checkbox_Button - Connection!");
+          this.parentNode.childNodes[1].style.textDecorationLine = 'line-through'; 
+        } 
+        else {
+          console.log("Checkbox_Button - Connection!");
+          this.parentNode.childNodes[1].style.textDecorationLine = 'none'; 
+        } 
+      });
+      
        // 노드연결
        p_Tag.appendChild(checkBox);
        p_Tag.appendChild(textNode);
@@ -102,31 +175,31 @@ router.get('/', (req, res) => {
     } 
 
 
-  
+// Script태그를 생성하는 부분
 var script = Dom.createElement('script');
-  
+
+// Script태그안에 Script를 작성하는 부분
 script.appendChild(Dom.createTextNode(
-"//연결 테스트" +
-"console.log('연결완료');" +
+"\n//연결 테스트\n"+
+"console.log('연결완료');\n"+
+"console.log(document.body.childNodes);\n" +
+"console.log(document.body.childNodes[1].childNodes[0]);\n" +
+"var del_Span = document.body.childNodes[1].childNodes[0].childNodes[2];\n" +
+"console.log('del_Span: ' + del_Span);\n" +
+"console.log('del_Span: ' + document.body.childNodes[1].childNodes.length);\n" +
 
-"// List 삭제 이벤트 연결" +
-"delButton.addEventListener('click', delList);" +
+"del_Span.addEventListener('click', (del_Span) => {\n" +
+  "console.log('Del_Event - Connection!');\n" +
+  "console.log('thisNode: '+ this.length);\n" +
+  "del_Span.parentNode.remove();\n"+
+"});\n"
 
-"// List 체크완료 이벤트 연결" +
-"checkBox.addEventListener('click', checkList);" +
-
-"// List 삭제 이벤트 //" +
-"function delList() { this.parentNode.remove(); }" +
-
-"// List 체크완료 이벤트 //" +
-"function checkList() {" +
-    "if(this.checked == true) { this.parentNode.childNodes[1].style.textDecorationLine = 'line-through'; }" +
-    "else { this.parentNode.childNodes[1].style.textDecorationLine = 'none'; }" +
-"}"));
+));
 
 // 최종적으로 html 노드를 모두 추가 //
 Dom.body.appendChild(list_content);
 Dom.body.appendChild(script);
+
 
 
     // 완성된 list_content를 전송
@@ -137,7 +210,7 @@ Dom.body.appendChild(script);
 module.exports = router;
 
 
- /*/ document를 사용하기 위한 객체 생성 //
+ // document를 사용하기 위한 객체 생성 //
     // JSDOM 객체에 옵션을 주고 생성.
     const dom = new JSDOM('', {
       // 이 JSDOM이 참조할 URL
@@ -156,10 +229,10 @@ module.exports = router;
       resources: "usable"
     });
 
-*/
+/
 
 
-/*/ 노드 생성 테스트 했던 것들 //
+// 노드 생성 테스트 했던 것들 //
 
 // 스케줄을 추가할 목록
     var list_content = document.querySelector('#schedule_list_content');
