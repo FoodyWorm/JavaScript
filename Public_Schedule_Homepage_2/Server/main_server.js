@@ -31,6 +31,9 @@ var schedule_add = require('../routers/schedule_add');
 // 스케줄 목록 라우터 생성.
 var schedule_list = require('../routers/schedule_list');
 
+// 스케줄 목록 삭제 라우터 생성
+var schedule_list_delete = require('../routers/schedule_list_delete');
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 서버를 3030포트로 실행. //
@@ -73,5 +76,8 @@ app.use('/login', loginRouter);
 // 스케줄 목록 추가 시도.
 app.use('/schedule/add',schedule_add);
 
-// 스케줄 목록
+// 스케줄 목록 표시 시도.
 app.use('/get_list', schedule_list);
+
+// 스케줄 목록 삭제 시도
+app.use('/delete', schedule_list_delete);
