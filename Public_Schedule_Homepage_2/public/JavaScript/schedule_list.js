@@ -58,7 +58,7 @@ $(document).ready(function() {
           function deletes() {
             x.parentNode.parentNode.remove();
           };
-          setTimeout(deletes, 100);
+          setTimeout(deletes, 10);
         });
 
         // List 체크완료 이벤트 연결

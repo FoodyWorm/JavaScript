@@ -59,22 +59,22 @@ app.use(express.static(path.join(__dirname, '../public')));
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 라우터 사용 구간 //
 // 회원가입 페이지 이동.
-app.use('/signup.html', signup_MoveRouter);
+app.use('/signup', signup_MoveRouter);
 
 // 메인 페이지 -> 스케줄 추가 페이지 이동
-app.use('/schedule_add_move', schedule_add_MoveRouter);
+app.use('/html/schedule_add_move', schedule_add_MoveRouter);
 
 // 메인 페이지 -> 스케줄 목록 페이지 이동
-app.use('/schedule_list_move', schedule_list_MoveRouter);
+app.use('/html/schedule_list_move', schedule_list_MoveRouter);
 
 // 회원가입 데이터 전송시도.
-app.use('/signup', signupRouter);
+app.use('/html/signup', signupRouter);
 
 // Login 시도.
-app.use('/login', loginRouter);
+app.use('/html/login', loginRouter);
 
 // 스케줄 목록 추가 시도.
-app.use('/schedule/add',schedule_add);
+app.use('/html/schedule/add',schedule_add);
 
 // 스케줄 목록 표시 시도.
 app.use('/get_list', schedule_list);

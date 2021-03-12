@@ -18,20 +18,19 @@ var connection = mysql.createConnection({
 // 데이터베이스 접속
 connection.connect();
 
-// 쿼리 명령문 (delete) //
-var delete_data = null;
-
-
 ////////////////////////////////////////////////////////////////////////////////////
 // 홈페이지에 get_list 요청이 오면, list 노드를 생성해서 응답.
 router.post('/', (req, res) => {
   console.log("삭제 요청이 도착하였습니다...");
   console.log("삭제 요청 데이터: " + req.body.List);
-  
+ 
+  // 쿼리 명령문 (delete) //
+  var delete_query = "DELETE From schedules WHERE schedule_Name = '" +   req.body.List  +"'";
+  connection.query(delete_query, (err, result) => {
+    if(err) { throw err }
+    console.log("삭제가 완료되었었으며, 삭제된 데이터는 다음과 같습니다.\n" + result);
 
-
-
-
+  });
 
   res.end();
 });

@@ -54,10 +54,14 @@ router.get('/', (req, res) => {
     });
     
     // JSON 파일 불러오기
-    fs.readFile(path.join(__dirname, '../public/json/list.json'), (err, data) => { console.log("Get Json: " + data); });
+    fs.readFile(path.join(__dirname, '../public/json/list.json'), (err, data) => { 
+      console.log("Get Json: " + data);
+      // 완성된 list_content를 전송
+      res.send("");
+    });
 
-    // 완성된 list_content를 전송
-    res.send("");
+    
+    
   });
 });
 
