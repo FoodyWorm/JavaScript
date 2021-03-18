@@ -25,7 +25,7 @@
           </colgroup>
 
          
-          <form method="POST" action="schedule/add">
+          <form method="POST" action="schedule/add" target="no_move_AddList">
             <!-- 테이블 제목, 제목내용-->
             <tr>
               <td><span id="add_title">제목</span></td>
@@ -94,10 +94,8 @@
 
       </section>
 
-
-
-
-
+      <!-- 위치 고정용 iframe -->
+    <iframe id="no_move" name="no_move_AddList" scrolling="no" style="visibility:hidden; display: none;"></iframe>
 
   </body>
 </html>

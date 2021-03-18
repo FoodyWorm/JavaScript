@@ -15,14 +15,15 @@ var connection = mysql.createConnection({
   database: 'user_database'
 });
 
+// 데이터베이스 접속
+connection.connect();
+
 // 쿼리 명령문 (Select) - 속성 id, pw만 검색.
 var select = "SELECT DISTINCT id, pw FROM users";
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 홈페이지에 login 요청이 오면, 실행할 함수. //
 router.post('/', (req, res) => {
-  // 데이터베이스 접속
-  //connection.corsnnect();
   
   // users 테이블을 대상으로 데이터 조회, 쿼리 명령문 실행. (JSON.stringify는 만능이다...!)
   connection.query(select, (err, result, fields) => {
@@ -46,6 +47,8 @@ router.post('/', (req, res) => {
           res.sendFile(path.join(__dirname, '../public/html/login.html'));
           
         }
+
+        
       };
       
   });

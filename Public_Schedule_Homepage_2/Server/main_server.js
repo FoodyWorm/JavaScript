@@ -6,6 +6,7 @@ var path = require('path');
 var app = express();
 require('jsdom-global')();
 
+////////////////////////////////////////////////////////////////////////////////////
 // http 형식으로 express서버를 작성. //
 var Server = http.createServer(app);
 
@@ -55,11 +56,37 @@ app.use(express.urlencoded({ extended : true}));
 // 정적파일을 사용할 수 있도록 해주는 미들웨어. 이 미들웨어를 작성하지 않으면, CSS나 JavaScript를 적용할 수 없다.
 app.use(express.static(path.join(__dirname, '../public')));
 
-
+0
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 라우터 사용 구간 //
 // 회원가입 페이지 이동.
-app.use('/signup', signup_MoveRouter);
+//app.use('/signup', signup_MoveRouter);
+
+// 메인 페이지 -> 스케줄 추가 페이지 이동
+app.use('/schedule_add_move', schedule_add_MoveRouter);
+
+// 메인 페이지 -> 스케줄 목록 페이지 이동
+app.use('/schedule_list_move', schedule_list_MoveRouter);
+
+// 회원가입 데이터 전송시도.
+app.use('/signup', signupRouter);
+
+// Login 시도.
+app.use('/login', loginRouter);
+
+// 스케줄 목록 추가 시도.
+app.use('/schedule/add',schedule_add);
+
+// 스케줄 목록 표시 시도.
+app.use('/get_list', schedule_list);
+
+// 스케줄 목록 삭제 시도
+app.use('/delete', schedule_list_delete);
+
+////////////////////////////////////////////////////////////
+// 라우터 사용 구간 //
+// 회원가입 페이지 이동.
+//app.use('/html/signup', signup_MoveRouter);
 
 // 메인 페이지 -> 스케줄 추가 페이지 이동
 app.use('/html/schedule_add_move', schedule_add_MoveRouter);
@@ -68,7 +95,7 @@ app.use('/html/schedule_add_move', schedule_add_MoveRouter);
 app.use('/html/schedule_list_move', schedule_list_MoveRouter);
 
 // 회원가입 데이터 전송시도.
-app.use('/html/signup', signupRouter);
+//app.use('/html/signup', signupRouter);
 
 // Login 시도.
 app.use('/html/login', loginRouter);
@@ -77,7 +104,6 @@ app.use('/html/login', loginRouter);
 app.use('/html/schedule/add',schedule_add);
 
 // 스케줄 목록 표시 시도.
-app.use('/get_list', schedule_list);
+app.use('/html/get_list', schedule_list);
 
 // 스케줄 목록 삭제 시도
-app.use('/delete', schedule_list_delete);

@@ -17,6 +17,9 @@ var connection = mysql.createConnection({
   database: 'user_database'
 });
 
+// FoodyWorm 세션 접속 시도.
+connection.connect();
+
 // 임시 Index, start_Day, end_Day
 var index = 0;
 var start_Day = "start_test";
@@ -26,8 +29,6 @@ var end_Day = "end_test";
 ////////////////////////////////////////////////////////////////////////////////////
 // 홈페이지에 /schedule/add 요청이 오면, 스케줄 정보를 데이터베이스에 저장.
 router.post('/', (req, res) => {
-  // FoodyWorm 세션 접속 시도.
-  connection.connect();
 
   // 쿼리 명령문 (Insert)
   //var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + req.body.id + "', '" + req.body.pw + "')";

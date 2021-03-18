@@ -15,19 +15,21 @@ var connection = mysql.createConnection({
   database: 'user_database'
 });
 
+// FoodyWorm 세션 접속 시도.
+connection.connect(); 
+
 // 회원 INDEX & grade
 var index = 0;
-var grade = "basic"
+var grade = "basic";
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 홈페이지에 signup 요청이 오면, 요청자의 정보를 JavaScript로 전송.
 router.post('/', (req, res) => {
-  // FoodyWorm 세션 접속 시도.
-  connection.connect();
-  
+  console.log("Sign Up");
+
   // 쿼리 명령문 (Insert)
   //var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + req.body.id + "', '" + req.body.pw + "')";
-  var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + index + "', '" + req.body.mb_name + "', '" + req.body.mb_id + "', '" +req.body.mb_pw + "', '" + req.body.mb_department + "', '" + grade + "')";
+  var insert_data = "Insert Into users (userIndex, userName, id, pw, department, grade) VALUES ('" + index +"', '" + req.body.mb_name + "', '" + req.body.mb_id + "', '" +req.body.mb_pw + "', '" + req.body.mb_department + "', '" + grade + "')";
 
   //users 테이블을 대상으로 데이터 저장, 쿼리 명령문 실행.
   connection.query(insert_data, (err, result) => {
@@ -36,6 +38,7 @@ router.post('/', (req, res) => {
     console.log(result); 
   });
 
+  console.log();
   // 회원가입을 완료한 사용자에게 보여줄 페이지. (로그인 페이지)
   res.sendFile(path.join(__dirname, '../public/html/login.html'));
 });
