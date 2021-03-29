@@ -1,0 +1,17 @@
+{
+  "obj1" : {
+    "name" : "object1",
+    "password" : "111",
+    "index" : 1
+  },
+  "obj2" : {
+    "name" : "object2",
+    "password" : "222",
+    "index" : 2
+  },
+  "obj3" : {
+    "name" : "object3",
+    "password" : "333",
+    "index" : 3
+  }
+}
